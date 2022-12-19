@@ -36,6 +36,18 @@ const countries2 = [
 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=4'},
 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'}
 ];
+const newDiv = document.createElement("div")
+document.body.append(newDiv)
+
+countries2.forEach(cntry => {
+  const newH4 = document.createElement("h4")
+  newH4.textContent = cntry.title
+  const newImg = document.createElement("img")
+  newImg.src = cntry.imgUrl
+
+  newDiv.appendChild(newH4)
+  newDiv.appendChild(newImg)
+})
 
 //?  1.5 Basandote en el ejercicio anterior. Crea un botón que elimine el último 
 //?  elemento de la lista.
