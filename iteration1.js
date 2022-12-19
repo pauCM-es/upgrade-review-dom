@@ -3,15 +3,17 @@
 
 const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela'];
 
-const newUl = document.createElement("ul")
-countries.forEach(country => {
-  const newLi = document.createElement("li")
-  newLi.textContent = country
-  newUl.appendChild(newLi)
-})
-document.body.append(newUl)
+function createList (listArray, placeElement) {
+  const newUl = document.createElement("ul")
+  listArray.forEach(itemList => {
+    const newLi = document.createElement("li")
+    newLi.textContent = itemList
+    newUl.appendChild(newLi)
+  })
+  placeElement.append(newUl)
+}
 
-console.log(newUl)
+createList(countries, document.body)
 
 //?  1.2 Elimina el elemento que tenga la clase .fn-remove-me.
 document.querySelector(".fn-remove-me").remove()
@@ -20,6 +22,9 @@ document.querySelector(".fn-remove-me").remove()
 //?  en el div de html con el atributo data-function="printHere".
 
 const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola'];
+const divWithAttribute = document.querySelector("[data-function='printHere']");
+
+createList(cars, divWithAttribute)
 
 //?  1.4 Crea dinamicamente en el html una lista de div que contenga un elemento 
 //?  h4 para el titulo y otro elemento img para la imagen.
